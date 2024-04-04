@@ -1,1 +1,1 @@
-# SoftEngineering
+# SoftwareEngineering
