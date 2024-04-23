@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Insertar Produccion</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('fondoindex.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="insprod">
+        <h2>Edit Production</h2>
+        <form action="modmaq.html" method="post">
+            <label for="Modmaq">Modmaq:</label>
+            <input type="text">
+            </select><br><br>
+			
+			<label for="Mq">Mq:</label>
+            <select id="Mq" name="Mq">
+                <option value="Mq1">CA1</option>
+                <option value="Mq2">CA2</option>
+                <option value="Mq3">CA6</option>
+            </select><br><br>
+			
+			<label for="fecha"> Last Date: </label>
+		    <input type="date" id="fecha" name="fecha" required placeholder?"dd/mm/yyyy"><br><br>
+
+			<label for="Mq">Last Turn:</label>
+            <select id="Mq" name="Mq">
+                <option value="Mq1">1</option>
+                <option value="Mq2">2</option>
+                <option value="Mq3">3</option>
+            </select><br><br>
+			
+            <input type="submit" value="Edit">
+			<input type="submit" value="Insert">
+        </form>
+    </div>
+</body>
+
+</html>

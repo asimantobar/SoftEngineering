@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome Marta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #004080; /* Cambia el color de fondo a azul sólido */
+        }
+
+        #carousel-container {
+            width: 100%;
+            height: 350px; /* Ajusta la altura del carrusel según tu preferencia */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            animation: slide 10s infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .carousel-img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .carousel-img:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .carousel-img:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        /* Ajusta los valores de animation-delay según el número de imágenes y la duración de la animación */
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img src="logomichelin.png" alt="Logo Michelin">
+        <div id="welcome">
+            <h2>Welcome Marta</h2>
+        </div>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="mqutilizadas.html">Machine Occupation</a></li>
+            <li><a href="produccion.html">Machines for Production</a></li>
+            <li><a href="rmcosts.html">Raw Materials</a></li>
+        </ul>
+		<br>
+    </div>
+
+    <div id="notify-button">
+	<img src="welcome1.png" alt="Muñeco" style="width: 260px">
+        <a href="notifbreak.html" class="button">Notify Breakdown</a> 
+		<img src="welcome.png" alt="Muñeco" style="width: 300px"><br>
+        <a href="updateav.html" class="button">Notify Repair</a>
+    </div><br><br><br><br>
+
+    <div id="carousel-container">
+        <img src="imagen1.jpg" alt="Slide 1" class="carousel-img">
+        <img src="imagen2.jpg" alt="Slide 2" class="carousel-img">
+        <img src="imagen3.jpg" alt="Slide 3" class="carousel-img">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+
+    <script>
+        var images = document.querySelectorAll('.carousel-img');
+        var currentImageIndex = 0;
+
+        function showImage(index) {
+            images.forEach(function (img, i) {
+                if (i === index) {
+                    img.style.opacity = '1';
+                } else {
+                    img.style.opacity = '0';
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        setInterval(nextImage, 5000); // Cambia la imagen cada 5 segundos
+    </script>
+</body>
+
+</html>

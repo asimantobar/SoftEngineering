@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="style.css">
+    <title>Log In</title>
+    <style>
+		body {
+			margin: 0; 
+			padding: 0; 
+			background-image: url('fondoindex.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed; 
+		}
+    </style>
+</head>
+
+<body>
+    <div id="mqutilizadasform">
+        <h2>Consult Machine Occupation</h2>
+		<form action="mapaplanta.html" method="get">
+		<label for="fecha">Date: </label>
+		<input type="date" id="fecha" name="fecha" required placeholder?"dd/mm/yyyy"><br><br>
+
+		<label for="turno">Shift:</label>
+		<select id="turno" name="turno">
+			<option value="Shift 1">Shift 1</option>
+			<option value="Shift 2">Shift 2</option>
+			<option value="Shift 3">Shift 3</option>
+		</select><br><br>
+
+		<input type="submit" value="Consult">
+	</form>
+    </div>
+</body>
+
+</html>

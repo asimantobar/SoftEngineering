@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Material Costs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0; 
+            padding: 0; 
+            background-image: url('fondoindex.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            font-family: Impact, Arial, sans-serif;
+        }
+
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto; 
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con opacidad */
+            padding: 20px;
+            border-radius: 10px; /* Añadimos bordes redondeados */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Añadimos una sombra */
+            position: relative; /* Establecemos posición relativa para el contenedor */
+        }
+        
+        h1 {
+            color: #FFE600;
+            font-family: Impact;
+            font-feature-settings: "'liga' 1";
+            font-kerning: auto;
+            font-style: italic;
+            font-size: 3.5em;
+            font-weight: 400px;
+            letter-spacing: 0.075em;
+            line-height: 1.5em;
+            text-decoration: none;
+            text-transform: none;
+            word-spacing: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #FFE600;
+            color: #004080;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #FFD700;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 0 10px;
+            color: #004080;
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Raw Material Costs</h1>
+    <div class="chart-container">
+        <canvas id="myChart" width="800" height="400"></canvas>
+
+        <!-- Selects para elegir el modo -->
+        <div class="btn-container">
+            <select id="materialSelect">
+                <option value="Material1">ModA</option>
+                <option value="Material2">ModB</option>
+                <option value="Material3">ModC</option>
+                <option value="Material4">ModD</option>
+                <option value="Material5">ModE</option>
+                <option value="Material6">ModF</option>
+            </select>
+        </div>
+
+        <!-- Botón para abrir la página prodtree.html -->
+        <div class="btn-container">
+            <button class="btn" onclick="openProductionTree()">Open Production Tree</button>
+        </div>
+    </div>
+
+    <script>
+        var semanas = ["Week 1", "Week 2", "Week 3", "Week 4"];
+        var costeMaterial1 = [500, 600, 700, 550]; 
+        var costeMaterial2 = [400, 450, 550, 600]; 
+        var costeMaterial3 = [600, 550, 500, 650]; 
+        var costeMaterial4 = [700, 650, 600, 550]; 
+        var costeMaterial5 = [550, 500, 450, 400]; 
+        var costeMaterial6 = [650, 700, 750, 800]; 
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: semanas,
+                datasets: [{
+                    label: 'Aro 1',
+                    data: costeMaterial1,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: false,
+                }, {
+                    label: 'Banda Conductora',
+                    data: costeMaterial2,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: false,
+                }, {
+                    label: 'Goma 1',
+                    data: costeMaterial3,
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    fill: false,
+                }, {
+                    label: 'Hilos',
+                    data: costeMaterial4,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: false,
+                }, {
+                    label: 'Pegamento',
+                    data: costeMaterial5,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    fill: false,
+                }, {
+                    label: 'Tejido',
+                    data: costeMaterial6,
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    fill: false,
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Cost in €'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Weeks'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Función para abrir la página de producción con el modo seleccionado
+        function openProductionTree() {
+            var selectElement = document.getElementById("materialSelect");
+            var selectedMaterial = selectElement.value;
+            var productionTreeUrl = "prodtree.html?mode=" + selectedMaterial;
+            window.location.href = productionTreeUrl;
+        }
+    </script>
+</body>
+</html>

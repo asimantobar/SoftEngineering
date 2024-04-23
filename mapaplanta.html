@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Planta</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 45px;
+            float: left;
+        }
+
+        td {
+            width: 35px;
+            height: 35px;
+            border: none; /* Borde para visualización */
+        }
+
+        .machine {
+            background-color: green;
+			width: 35px;
+			height: 35px;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			font-family: "Trebuchet MS";
+        }
+        .floor {
+            
+        }
+		     
+        a {
+            color: #0060AE;
+            font-family: "Trebuchet MS";
+            font-weight: bold;
+        }
+        
+        a:hover {
+            background-color: #FFE600;
+        }
+        
+        .zone {
+			background-color: #FFE600;
+			width: 35px;
+			height: 35px;
+			color: #0060AE;
+			text-align: center;
+			font-weight: bold;
+			font-family: "Trebuchet MS";
+        }
+		
+		.use {
+            background-color: red;
+			width: 35px;
+			height: 35px;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			font-family: "Trebuchet MS";			
+        }
+		
+		.maint {
+            background-color: orange;
+			width: 35px;
+			height: 35px;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			font-family: "Trebuchet MS";			
+        }
+		
+		.letra {
+			color: white;
+			width: 35px;
+			height: 35px;
+			text-align: left;
+			font-weight: bold;
+			font-family: "Trebuchet MS";
+		}
+		
+		body {
+			margin: 0; 
+			padding: 0; 
+			background-image: url('fotoformprod.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed; 
+		}
+		
+		td a {
+            color: white;
+        }
+        
+        td a:hover {
+            color: 004080; 
+        }
+        
+        h1 {
+            color: #FFE600;
+            font-family: Impact;
+            font-feature-settings: "'liga' 1";
+            font-kerning: auto;
+            font-style: italic;
+            font-size: 3.5em;
+            font-weight: 400px;
+            letter-spacing: 0.075em;
+            line-height: 1.5em;
+            text-decoration: none;
+            text-transform: none;
+            word-spacing: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+		
+    </style>
+</head>
+<body>
+    <div id="mapa"> 
+        <h1>Plant Map</h1>
+        <table>
+			<tr><td class="zone"></td>
+            <td class="zone">Textiles</td>
+            <td class="zone"></td></tr>
+            <tr><td class="floor"></td>
+			
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <tr><td class="use"><a href="calendario.html">CA1</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">CA2</a></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="maint"><a href="calendario.html">CA3</a></td>
+            <td class="floor"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="use"><a href="calendario.html">CA4</a></td>
+            <td class="floor"></td>
+            <td class="machine"><a href="calendario.html">CA5</a></td></tr>
+        </table>
+
+        <table>
+			<tr><td class="zone"></td>
+            <td class="zone">Glues</td>
+            <td class="zone"></td></tr>
+            <tr><td class="floor"></td>
+			
+            <tr><td class="machine"></td>
+            <td class="machine"><a href="calendario.html">BUD1</a></td>
+            <td class="machine"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="use"></td>
+            <td class="use"><a href="calendario.html">BUD2</a></td>
+            <td class="use"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="machine"></td>
+            <td class="machine"><a href="calendario.html">BUD3</a></td>
+            <td class="machine"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="use"></td>
+            <td class="use"><a href="calendario.html">TRIPLEX</a></td>
+            <td class="use"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="use"></td>
+            <td class="use"><a href="calendario.html">BUD4</a></td>
+            <td class="use"></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="maint"></td>
+            <td class="maint"><a href="calendario.html">BUD5</a></td>
+            <td class="maint"></td></tr>
+        </table>
+
+        <table>
+			<tr><td class="zone"></td>
+            <td class="zone">Assembly</td>
+            <td class="zone"></td></tr>
+            <tr><td class="floor"></td>
+			
+            <tr><td class="use"><a href="calendario.html">MRS1</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">MRS2</a></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="use"><a href="calendario.html">MRS3</a></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="machine"><a href="calendario.html">MRS4</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">MRS5</a></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="use"><a href="calendario.html">MRS6</a></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="use"><a href="calendario.html">MRS7</a></td>
+            <td class="floor"></td>
+            <td class="machine"><a href="calendario.html">MRS8</a></td></tr>
+            <tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+            <td class="maint"><a href="calendario.html">MRS9</a></td>
+            <td class="floor"></td></tr>			
+        </table>
+
+        <table>
+			<tr><td class="zone"></td>
+            <td class="zone">Paint</td>
+            <td class="zone"></td></tr>
+            <tr><td class="floor"></td>
+            <tr><td class="floor"></td>
+			<td class="use"></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"><a href="calendario.html">P</a></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"><a href="calendario.html">I</a></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"><a href="calendario.html">N</a></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"><a href="calendario.html">T</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="use"><a href="calendario.html">U</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="use"><a href="calendario.html">R</a></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"><a href="calendario.html">A</a></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"></td></tr>
+			<tr><td class="floor"></td>
+			<td class="use"></td></tr>
+		
+        </table>
+
+        <table>
+		    <tr><td class="floor"></td>
+			<td class="zone"></td>
+            <td class="zone">Furnace</td>
+            <td class="zone"></td>
+			<tr><td class="floor"></td></tr>
+            <tr><td class="floor"></td>
+			<tr><td class="use"><a href="calendario.html">H1</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">H2</a></td>
+			<td class="floor"></td>
+            <td class="maint"><a href="calendario.html">H3</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td>
+			<td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="use"><a href="calendario.html">H4</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">H5</a></td>
+			<td class="floor"></td>
+            <td class="use"><a href="calendario.html">H6</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td>
+			<td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="use"><a href="calendario.html">H7</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">H8</a></td>
+			<td class="floor"></td>
+            <td class="use"><a href="calendario.html">H9</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td>
+			<td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="use"><a href="calendario.html">H10</a></td>
+            <td class="floor"></td>
+            <td class="machine"><a href="calendario.html">H11</a></td>
+			<td class="floor"></td>
+            <td class="use"><a href="calendario.html">H12</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td>
+			<td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="use"><a href="calendario.html">H13</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">H14</a></td>
+			<td class="floor"></td>
+            <td class="use"><a href="calendario.html">H15</a></td></tr>
+			<tr><td class="floor"></td>
+            <td class="floor"></td>
+            <td class="floor"></td>
+			<td class="floor"></td>
+            <td class="floor"></td></tr>
+			<tr><td class="maint"><a href="calendario.html">H16</a></td>
+            <td class="floor"></td>
+            <td class="use"><a href="calendario.html">H17</a></td>
+			<td class="floor"></td>
+            <td class="use"><a href="calendario.html">H18</a></td></tr>
+        </table>
+		
+		<table>
+            <tr><td class="floor"></td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="floor"></td></tr>
+            <tr><td class="use"></td><td class="letra">In use</td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="machine"></td><td class="letra">Free</td></tr>
+			<tr><td class="floor"></td></tr>
+			<tr><td class="maint"></td><td class="letra">Maintenance</td></tr>
+			<tr><td class="floor"></td></tr>
+		
+        </table>
+    </div>
+    <a href="menu.html">Back to Menu</a>
+</body>
+</html>

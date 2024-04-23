@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		body {
+			margin: 0; 
+			padding: 0; 
+			background-image: url('fondoindex.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed; 
+		}
+		
+		h1 {
+            text-align: center; 
+            margin-top: 10px; 
+			color: #FFE600;
+			font-family: Impact;
+			font-feature-settings: "'liga' 1";
+			font-kerning: auto;
+			font-style: italic;
+			font-size: 3.5em;
+			font-weight:400px;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+			text-decoration: none;
+			text-transform: none;
+			word-spacing: 0;
+			margin-bottom: 20px;
+        }
+		
+		h2 {
+            text-align: center; 
+            margin-top: 10px; 
+			color: #FFE600;
+			font-family: Impact;
+			font-feature-settings: "'liga' 1";
+			font-kerning: auto;
+			font-style: italic;
+			font-size: 2em;
+			font-weight: 400px;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+			text-decoration: none;
+			text-transform: none;
+			word-spacing: 0;
+			margin-bottom: 20px;
+        }
+        
+        a {
+            text-align: center; 
+            margin-top: 10px; 
+			color: #FFE600;
+			font-family: "Trebuchet MS";
+			font-feature-settings: "'liga' 1";
+			font-kerning: auto;
+			font-size: 1em;
+			font-weight: bold;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+			text-decoration: none;
+			text-transform: none;
+			word-spacing: 0;
+			margin-bottom: 20px;
+        }
+        
+        a:hover {
+            background-color: #FFE600;
+        }
+        
+        .calendar td {
+            color: #004080; 
+            font-family: Impact, Arial, sans-serif; 
+            font-size: 1.2em; 
+        }
+
+        .calendar th {
+            color: #FFE600; 
+            font-family: "Trebuchet MS"; 
+            font-weight: bold;
+            font-size: 1.1em; 
+        }
+
+        
+
+	</style>
+</head>
+<body>
+    <div class="calendar">
+        <h1>Calendar</h1>
+        <h2>May</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="on-production">1</td>
+                    <td class="on-production">2</td>
+                </tr>
+                <tr>
+                    <td class="on-production">3</td>
+                    <td class="breakdown">4</td>
+                    <td class="on-production">5</td>
+                    <td class="on-production">6</td>
+                    <td class="maintenance">7</td>
+                    <td class="on-production">8</td>
+                    <td class="on-production">9</td>
+                </tr>
+                <tr>
+                    <td class="maintenance">10</td>
+                    <td class="on-production">11</td>
+                    <td class="on-production">12</td>
+                    <td class="breakdown">13</td>
+                    <td class="on-production">14</td>
+                    <td class="on-production">15</td>
+                    <td class="on-production">16</td>
+                </tr>
+                <tr>
+                    <td class="on-production">17</td>
+                    <td class="on-production">18</td>
+                    <td class="breakdown">19</td>
+                    <td class="on-production">20</td>
+                    <td class="maintenance">21</td>
+                    <td class="on-production">22</td>
+                    <td class="on-production">23</td>
+                </tr>
+                <tr>
+                    <td class="on-production">24</td>
+                    <td class="on-production">25</td>
+                    <td class="maintenance">26</td>
+                    <td class="on-production">27</td>
+                    <td class="on-production">28</td>
+                    <td class="on-production">29</td>
+                    <td class="maintenance">30</td>
+                </tr>
+				<tr>
+                    <td class="on-production">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="menu.html">Back to Menu</a>
+    </div>
+</body>
+</html>

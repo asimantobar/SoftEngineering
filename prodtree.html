@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('fondoindex.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFE600;
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            position: absolute;
+            top: 70px;
+            left: 60px;
+            background-color: #ffffff4a;
+            padding: 80px;
+            border-radius: 4px;
+        }
+
+        svg {
+            width: 400px;
+            height: 300px;
+        }
+
+        .container2 {
+            position: absolute;
+            top: 70px;
+            left: 60px;
+            background-color: #ffffff;
+            padding: 80px;
+            border-radius: 4px;
+        }
+
+        svg2 {
+            width: 400px;
+            height: 300px;
+        }
+
+
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 2px;
+        }
+
+        .node text {
+            font: 12px sans-serif;
+            fill: #000;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 2px;
+        }
+        
+        a {
+            text-align: center; 
+            margin-top: 10px; 
+			color: #0060AE;
+			font-family: "Trebuchet MS";
+			font-feature-settings: "'liga' 1";
+			font-kerning: auto;
+			font-size: 1em;
+			font-weight: bold;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+			text-decoration: none;
+			text-transform: none;
+			word-spacing: 0;
+			margin-bottom: 20px;
+        }       
+
+        a:hover {
+            background-color: #FFE600;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Decision Tree</h1>
+    <br><br>
+    <div class="container">
+        <svg></svg>
+    </div>
+
+    <script>
+        var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+
+        var tree = d3.tree()
+            .size([300, 300]); // Tamaño del árbol dentro del contenedor
+
+        var data = {
+            "name": "ModA",
+            "children": [
+                { "name": "A1", "children": [
+                    { "name": "PEG" },
+                    { "name": "TE" }
+                ]},
+                { "name": "BAND", "children": [
+                    { "name": "TE" },
+                    { "name": "PINTURA" },
+                    { "name": "HIL" }
+                ]},
+                { "name": "GOM4", "children": [
+                    { "name": "TI_GOM" }
+                ]}
+            ]
+        };
+
+        var root = d3.hierarchy(data);
+        tree(root);
+
+        var link = svg.selectAll(".link")
+            .data(root.links())
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", d3.linkHorizontal()
+                .x(function(d) { return d.y; })
+                .y(function(d) { return d.x; }));
+
+        var node = svg.selectAll(".node")
+            .data(root.descendants())
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+        node.append("circle")
+            .attr("r", 5);
+
+        node.append("text")
+            .attr("dy", 3)
+            .attr("x", function(d) { return d.children ? -8 : 8; })
+            .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+            .each(function(d) {
+                // Wrap the text in an <a> tag with the href attribute set to "proveedores.html"
+                d3.select(this).append("a")
+                    .attr("xlink:href", "proveedores.html")
+                    .append("tspan")
+                    .text(function(d) { return d.data.name; });
+            });
+    </script>
+    <a href="menu.html">Back to Menu</a>
+</body>
+
+</html>
