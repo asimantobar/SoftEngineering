@@ -1,3 +1,0 @@
-Greetings!
-
-This is a testFile_two.txt for practicing with GitHub.
